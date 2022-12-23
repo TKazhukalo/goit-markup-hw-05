@@ -125,8 +125,8 @@ ul {
 }
 .section-container {
     padding-top: 96px ;
-   padding-bottom: 72px;
-   text-align: center;
+    padding-bottom: 72px;
+    text-align: center;
 }
 .logo-nav {
     display: flex;
@@ -139,8 +139,8 @@ ul {
 .header-nav .header-item{
     display: block;
     margin-right: 40px;  
-        color: var(--color-priority);
-transition: color var(--transition-duration-func);
+    color: var(--color-priority);
+    transition: color var(--transition-duration-func);
 }
 
 .header-nav .header-item:last-child{
