@@ -55,14 +55,26 @@ p,
 ul {
     margin: 0;
 }
-.header-nav .header-item:active::after {
-    content: '';
+.header-nav .menu-link {
     display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.current::after
+
+ {
+   position: absolute;
+    content: '';
     width: 100%;
     height: 4px;
+    left: 0;
+    bottom: 0;
     background-color: var(--color-active);
     border-radius: 2px;
         
+}
+.current {
+
 }
 .logo {
     font-family: 'Raleway', sans-serif;
@@ -79,9 +91,9 @@ ul {
     left: 0;
     top: 0;
     width: 100%;
-    height:100%;
-    overflow: auto;
-    transform: translate(0, 100%);
+    height:300px;
+
+  transform: translate(0, 100%);
     transition: transform 500ms linear;
     padding-top: 40px;
     padding-right: 32px;
@@ -96,11 +108,11 @@ ul {
 
 }
 .list-item-img {
-    position: relative;
-    overflow: hidden;
+    
+    display: block;
+
 }
 
-.card-link:focus .overlay,
 .card-link:hover .overlay
  {
     transform: translate(0, 0);
@@ -137,12 +149,17 @@ ul {
     color: var(--color-priority);
 }
 .header-nav .header-item{
+    position: relative;
     display: block;
     margin-right: 40px;  
+    padding: 0;
     color: var(--color-priority);
     transition: color var(--transition-duration-func);
 }
-
+.link {
+    padding: 0;
+    margin: 0;
+}
 .header-nav .header-item:last-child{
     margin-right: 0;
 }
@@ -162,13 +179,14 @@ ul {
     transition: color var(--transition-duration-func), background-color var(--transition-duration-func);
 }
  .menu-link:hover,
- .menu-link:focus
+ .menu-link:focus,
+.menu-link:active
  {
     color: var(--accent-color);
 }
 .menu-link:active
  {
-    background-color: var(--primary-whirte-color);
+    background-color: var(--color-active);
 }
 
 .list {
@@ -272,6 +290,7 @@ ul {
 
 .button-iteam .button:hover,
 .button-iteam .button:focus {
+    border: 1px solid var(--accent-color);
     color: var(--primary-whirte-color);
     background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -448,10 +467,13 @@ ul {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    color: var(--color-priority);
 }
 .card-link {
+list-style-type: none;
+    text-decoration: none;
     display: block;
-    background-image: linear-gradient(0deg, rgba(77, 90, 229, 0.1), rgba(77, 90, 229, 0.1));
+  background-image: linear-gradient(0deg, rgba(77, 90, 229, 0.1), rgba(77, 90, 229, 0.1));
 }
 .card-image {
     display: block;
@@ -462,12 +484,14 @@ ul {
     border-top: 0;
     padding-top: 32px;
     padding-left: 16px;
-    padding-right: 53px;
+    padding-right: 16px;
     padding-bottom: 32px;
+    color: var(--color-priority);
+    background-color: var(--primary-whirte-color);
 }
-.card-thumb {
- 
-    background-blend-mode: soft-light, normal;
+.card-list-img-wrapper {
+    position: relative;
+    overflow: hidden;
 }
 .card-heading {
     margin-top: 0;  
@@ -480,9 +504,9 @@ ul {
 .card-set .list-item {
     flex-basis: calc((100% - 72px) / 3);
 }
-.card-set > .list-item:nth-child(3n) {
+/*.card-set > .list-item:nth-child(3n) {
     margin-right: 0;
-}
+}*/
 img {
     display: block;
     max-width: 100%; 
